@@ -3,17 +3,20 @@ from timeit import timeit
 
 def normal_loop(num: int) -> None:
     for i in range(num):
-        print(i)
+        # print(i)
+        pass
 
 def with_recursion(num: int) -> None:
     if num == 0:
-        print(num)
+        # print(num)
+        pass
         return
     with_recursion(num - 1)
-    print(num)
+    # print(num)
 
 def recursive_reverse(num: int) -> None:
-    print(num)
+    # print(num)
+    pass
     if (num - 1) == -1:
         return
     recursive_reverse(num - 1)
