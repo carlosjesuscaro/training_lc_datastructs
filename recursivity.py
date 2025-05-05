@@ -22,8 +22,8 @@ def recursive_reverse(num: int) -> None:
     recursive_reverse(num - 1)
 
 def recursive_main() -> None:
-    number = 50
-    result = timeit(f'normal_loop({50})', globals=globals(), number=100)
+    number = 500
+    result = timeit(f'normal_loop({number})', globals=globals(), number=100)
     recursive_time = timeit(f'with_recursion({number})', globals=globals(), number=100)
     reverse_time = timeit(f'recursive_reverse({number})', globals=globals(), number=100)
     print(f"Loop execution time: {result:.6f} seconds")
