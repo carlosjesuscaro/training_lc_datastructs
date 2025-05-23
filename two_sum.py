@@ -2,22 +2,12 @@ class OrderError(Exception):
     pass
 
 
-
-def check_instance(value: int) -> bool:
-    if not isinstance(value, int):
-        raise TypeError('Value is not an integer!')
-    return True
-
-
 def check_order(list_input: list) -> bool:
-    if isinstance(list_input, list):
-        for i, j in enumerate(list_input):
-            if check_instance(j) and i != len(list_input) - 1:
-                if not j <= list_input[i + 1]:
-                    raise OrderError('List is not in order!')
-        return True
-    else:
-        raise TypeError('Input is not a list!')
+    for i, j in enumerate(list_input):
+        if i != len(list_input) - 1:
+            if not j <= list_input[i + 1]:
+                raise OrderError('List is not in order!')
+    return True
 
 
 def two_sum(sorted_list: list[int], target: int) -> bool:
@@ -36,9 +26,9 @@ def two_sum(sorted_list: list[int], target: int) -> bool:
     TypeError -- raises TypeError if target is not int
     """
 
-    if check_instance(target) and check_order(sorted_list):
-        x, y, condition = 0, len(sorted_list) - 1, False
-        while not condition and y > 0 and x < len(sorted_list) - 1:
+    if check_order(sorted_list):
+       x, y, condition = 0, len(sorted_list) - 1, False
+       while not condition and y > 0 and x < len(sorted_list) - 1:
             tmp_value = sorted_list[x] + sorted_list[y]
             if tmp_value == target:
                 return True
@@ -46,11 +36,15 @@ def two_sum(sorted_list: list[int], target: int) -> bool:
                 x += 1
             elif tmp_value > target:
                 y -= 1
-        return condition
+       return condition
+    else:
+        raise ValueError('Target is not in sorted list!')
 
 
 def two_sum_main():
-    tmp = two_sum([1, 2, 4, 6, 8, 9, 14, 15], 13)
+    sorted_list = [1, 2, 4, 6, 8, 9, 14, 15]
+    target = 13
+    tmp = two_sum(sorted_list, target)
     if tmp:
         print('Two numbers from the input list sum the target number')
     else:
