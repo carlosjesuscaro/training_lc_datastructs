@@ -38,7 +38,7 @@ def two_sum(sorted_list: list[int], target: int) -> bool:
                 y -= 1
        return condition
     else:
-        raise ValueError('Target is not in sorted list!')
+        raise OrderError('Target is not in sorted list!')
 
 
 def two_sum_main():
