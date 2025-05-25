@@ -1,15 +1,15 @@
-from recursivity import recursive_main
-from palindrome import palindrome_main
-from two_sum import two_sum_main
-from two_array_sorted import combine
+from recursivity.recursivity import recursive_main
+from arrays.palindrome import palindrome_main
+from arrays.two_sum import two_sum_main
+from arrays.two_array_sorted import combine_main
 
 if __name__ == '__main__':
     print('Recursive exercise:')
     recursive_main()
-    print('\nPalindrome exercise')
+    print('\nPalindrome exercise:')
     palindrome_main()
-    print('\nTwo sum exercise')
+    print('\nTwo sum exercise:')
     two_sum_main()
-    print('\nTwo array sum exercise')
-    print(combine([1, 2, 3, 150, 450], [100, 200, 300, 302, 500]))
+    print('\nTwo array combine exercise:')
+    combine_main()
 

@@ -19,3 +19,6 @@ def combine(arr1, arr2):
         j += 1
 
     return ans
+
+def combine_main():
+    print(combine([1, 2, 3, 150, 450], [100, 200, 300, 302, 500]))
