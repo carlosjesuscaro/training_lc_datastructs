@@ -1,5 +1,5 @@
-from arrays.reverse import reverse_string
+from arrays.reverse import reverse
 
 def test_reverse_string():
-    assert reverse_string(['h', 'e', 'l', 'l', 'o']) == ['o', 'l', 'l', 'e', 'h']
-    assert reverse_string(['n', 'a', 'l', 'u']) == [ 'u', 'l', 'a', 'n']
+    assert reverse(['h', 'e', 'l', 'l', 'o']) == ['o', 'l', 'l', 'e', 'h']
+    assert reverse(['n', 'a', 'l', 'u']) == [ 'u', 'l', 'a', 'n']
