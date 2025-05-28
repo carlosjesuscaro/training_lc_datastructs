@@ -1,4 +1,4 @@
-def efficient(nums: list[int])->list[int]:
+def sorted_square(nums: list[int])->list[int]:
     new_nums = [0] * len(nums)
     i, j, z = 0, len(nums) - 1, len(nums) - 1
     while i <= j:
@@ -11,6 +11,7 @@ def efficient(nums: list[int])->list[int]:
         z -= 1
     return new_nums
 
-cc = efficient([-4,-1,0,3,10])
-print(cc)
+def sorted_square_main():
+    nums = [-4,-1,0,3,10]
+    print(f'Sorted Squares: {sorted_square(nums)}')
 
